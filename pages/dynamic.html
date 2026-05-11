@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
+    <link rel="stylesheet" href="/styles/components.css" />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Dynamic Content</h1>
+      <p class="page-intro">
+        Practice waiting for elements: appearing, disappearing, skeleton → content, progress
+        bars, rotating content, and conditional sections.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. Element appears after delay</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <button type="button" class="btn" data-testid="trigger-delayed-element">
+            Trigger
+          </button>
+          <span class="result-line" id="delayed-status">Click to inject an element after 2s.</span>
+        </div>
+        <div id="delayed-slot" style="margin-top: 12px"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Element disappears after delay</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <button type="button" class="btn" data-testid="trigger-disappear">
+            Make it disappear
+          </button>
+          <span class="badge badge-success" data-testid="disappearing-element">I am here</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Skeleton → loaded content</h2>
+        </div>
+        <button type="button" class="btn" data-testid="load-content-btn">Load content</button>
+
+        <div id="skel-wrap" class="hidden" data-testid="content-skeleton" style="margin-top: 12px">
+          <div class="skeleton skeleton-line title"></div>
+          <div class="skeleton skeleton-line"></div>
+          <div class="skeleton skeleton-line"></div>
+          <div class="skeleton skeleton-line" style="width: 80%"></div>
+        </div>
+
+        <div class="hidden" data-testid="content-loaded" id="content-loaded" style="margin-top: 12px">
+          <h3 data-testid="content-title">Loaded article</h3>
+          <p data-testid="content-body">
+            This content was loaded asynchronously after a 2-second simulated fetch. In a
+            real app, this is where API data would render.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>4. Progress bar</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <button type="button" class="btn" data-testid="start-progress-btn">Start</button>
+          <div class="progress" data-testid="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <span class="mono" data-testid="progress-value">0</span>
+          <span class="badge" data-testid="progress-status">Idle</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>5. Rotating text</h2>
+          <span class="badge">every 2s</span>
+        </div>
+        <div class="row" style="align-items: center">
+          <span class="result-line" data-testid="rotating-text">Initializing…</span>
+          <span class="mono" data-testid="rotation-index">0</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>6. Conditional section</h2>
+        </div>
+        <div class="check-row">
+          <input type="checkbox" id="cond-toggle" data-testid="toggle-section-checkbox" />
+          <label for="cond-toggle">Show extra options</label>
+        </div>
+        <div
+          class="hidden"
+          data-testid="conditional-section"
+          id="conditional-section"
+          style="margin-top: 12px; padding: 16px; border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-bg-secondary)"
+        >
+          <h3 style="margin-top: 0">Extra options</h3>
+          <p>You can only see me when the checkbox is checked.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/pages/dynamic.ts"></script>
+  </body>
+</html>

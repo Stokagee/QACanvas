@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
+    <link rel="stylesheet" href="/styles/components.css" />
+    <style>
+      .tall-section {
+        min-height: 60vh;
+        padding: 24px;
+        margin-bottom: 24px;
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: white;
+      }
+    </style>
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Scroll &amp; Lazy Loading</h1>
+      <p class="page-intro">
+        Practice <code>scrollIntoView</code>, infinite scroll, sticky elements, and
+        tracking scroll position.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. Scroll to element</h2>
+        </div>
+        <div class="row">
+          <button type="button" class="btn btn-secondary btn-sm" data-testid="scroll-to-top-btn">
+            ↑ Top
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" data-testid="scroll-to-section-2-btn">
+            Section 2
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" data-testid="scroll-to-section-5-btn">
+            Section 5
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" data-testid="scroll-to-bottom-btn">
+            ↓ Bottom
+          </button>
+        </div>
+
+        <div data-testid="scroll-section-1" class="tall-section" style="background: linear-gradient(135deg, #6366f1, #a855f7); margin-top: 16px">
+          Section 1
+        </div>
+        <div data-testid="scroll-section-2" class="tall-section" style="background: linear-gradient(135deg, #10b981, #06b6d4)">
+          Section 2
+        </div>
+        <div data-testid="scroll-section-3" class="tall-section" style="background: linear-gradient(135deg, #f59e0b, #ef4444)">
+          Section 3
+        </div>
+        <div data-testid="scroll-section-4" class="tall-section" style="background: linear-gradient(135deg, #8b5cf6, #ec4899)">
+          Section 4
+        </div>
+        <div data-testid="scroll-section-5" class="tall-section" style="background: linear-gradient(135deg, #06b6d4, #6366f1)">
+          Section 5
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Infinite scroll</h2>
+          <span class="badge" data-testid="infinite-scroll-count">Showing 10 items</span>
+        </div>
+        <ul class="infinite-list" data-testid="infinite-scroll-container" id="infinite-list"></ul>
+        <p
+          class="hidden"
+          data-testid="infinite-scroll-loading"
+          style="margin-top: 8px; color: var(--color-text-secondary)"
+        >
+          Loading more…
+        </p>
+        <p
+          class="hidden"
+          data-testid="infinite-scroll-end"
+          style="margin-top: 8px; color: var(--color-text-secondary)"
+        >
+          All items loaded
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Sticky bar</h2>
+        </div>
+        <p class="section-desc">Scroll past the bar — it should stick to the top.</p>
+        <div style="height: 200px"></div>
+        <div data-testid="sticky-bar" id="sticky-bar" class="sticky-bar">
+          I am sticky once you scroll past me.
+        </div>
+        <p class="result-line" data-testid="sticky-status" style="margin-top: 16px">
+          Sticky: <strong>no</strong>
+        </p>
+        <div style="height: 400px"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>4. Scroll position tracker</h2>
+        </div>
+        <p class="result-line" data-testid="scroll-position-display">Scroll Y: <strong>0px</strong></p>
+        <p class="result-line" data-testid="scroll-percent-display" style="margin-top: 8px">
+          <strong>0%</strong> of page
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="/src/pages/scroll.ts"></script>
+  </body>
+</html>

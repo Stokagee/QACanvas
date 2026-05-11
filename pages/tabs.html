@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs &amp; Windows — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
+    <link rel="stylesheet" href="/styles/components.css" />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Tabs &amp; Windows</h1>
+      <p class="page-intro">
+        Practice page context switching, popups, and cross-tab communication via
+        <code>BroadcastChannel</code>.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. Open new tab</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <a
+            href="inputs.html"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-secondary"
+            data-testid="open-new-tab-link"
+          >
+            Open Inputs in new tab (link)
+          </a>
+          <button type="button" class="btn" data-testid="open-new-tab-btn">
+            Open via window.open
+          </button>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Popup window</h2>
+          <span class="badge">400×300</span>
+        </div>
+        <div class="row" style="align-items: center">
+          <button type="button" class="btn" data-testid="open-popup-btn">Open popup</button>
+          <span class="result-line" data-testid="popup-result">—</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Tab broadcast</h2>
+          <span class="badge">BroadcastChannel</span>
+        </div>
+        <p class="section-desc">
+          Open this page in two tabs, type a message, click Send. The other tab's
+          received-message line will update.
+        </p>
+        <div class="row" style="align-items: center">
+          <input
+            type="text"
+            data-testid="broadcast-input"
+            placeholder="Type a message"
+            style="max-width: 240px"
+          />
+          <button type="button" class="btn" data-testid="broadcast-send-btn">Send</button>
+        </div>
+        <p class="result-line" data-testid="broadcast-received" style="margin-top: 12px">
+          Last received: <strong>—</strong>
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="/src/pages/tabs.ts"></script>
+  </body>
+</html>
