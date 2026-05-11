@@ -3,6 +3,10 @@
  * Handles auth guard, theme persistence, navbar injection, footer, logout.
  */
 
+import '../styles/base.css';
+import '../styles/navbar.css';
+import '../styles/components.css';
+
 const THEME_KEY = 'qacanvas-theme';
 const AUTH_KEY = 'loggedIn';
 

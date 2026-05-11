@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/QAcanvas/',
+  base: '/QACanvas/',
   build: {
     rollupOptions: {
       input: {
