@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iframes — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
+    <link rel="stylesheet" href="/styles/components.css" />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Iframes</h1>
+      <p class="page-intro">
+        Practice <code>page.frameLocator()</code>, frame navigation, and nested frames.
+        All iframes use <code>srcdoc</code>.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. Simple iframe</h2>
+        </div>
+        <iframe class="demo-frame" data-testid="iframe-simple" id="iframe-simple" title="Simple frame"></iframe>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Iframe with form</h2>
+        </div>
+        <iframe class="demo-frame" data-testid="iframe-form" id="iframe-form" title="Form frame" style="height: 240px"></iframe>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Nested iframes</h2>
+        </div>
+        <iframe class="demo-frame" data-testid="iframe-outer" id="iframe-outer" title="Outer frame" style="height: 320px"></iframe>
+      </section>
+    </main>
+
+    <script type="module" src="/src/pages/iframes.ts"></script>
+  </body>
+</html>

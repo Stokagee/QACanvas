@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tables — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
+    <link rel="stylesheet" href="/styles/components.css" />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Tables</h1>
+      <p class="page-intro">
+        Practice table traversal, sorting, filtering, pagination, and dynamic data.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. Static table</h2>
+        </div>
+        <div class="table-wrap">
+          <table data-testid="static-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Start Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="static-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Sortable table</h2>
+          <span class="badge">click headers</span>
+        </div>
+        <div class="table-wrap">
+          <table data-testid="sortable-table">
+            <thead>
+              <tr>
+                <th class="sortable" data-testid="sort-header-name" data-key="name">
+                  Name <span data-testid="sort-indicator-name"></span>
+                </th>
+                <th class="sortable" data-testid="sort-header-department" data-key="department">
+                  Department <span data-testid="sort-indicator-department"></span>
+                </th>
+                <th class="sortable" data-testid="sort-header-salary" data-key="salary">
+                  Salary <span data-testid="sort-indicator-salary"></span>
+                </th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody data-testid="sortable-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Filterable + searchable</h2>
+        </div>
+        <div class="row" style="margin-bottom: 12px">
+          <input
+            type="search"
+            placeholder="Search across all columns…"
+            data-testid="filter-table-search"
+            style="max-width: 240px"
+          />
+          <select data-testid="filter-table-dept" style="max-width: 200px">
+            <option value="">All departments</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Marketing">Marketing</option>
+            <option value="HR">HR</option>
+            <option value="Finance">Finance</option>
+          </select>
+          <select data-testid="filter-table-status" style="max-width: 160px">
+            <option value="">All statuses</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+          <span class="badge" data-testid="filter-table-results-count">Showing 10 of 10</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody data-testid="filter-table-body"></tbody>
+          </table>
+        </div>
+        <div
+          class="hidden"
+          data-testid="filter-no-results"
+          style="padding: 16px; text-align: center; color: var(--color-text-secondary)"
+        >
+          No employees match these filters.
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>4. Paginated table</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Position</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody data-testid="paged-table-body"></tbody>
+          </table>
+        </div>
+        <div class="pager">
+          <button type="button" class="btn btn-secondary btn-sm" data-testid="paged-table-first">
+            « First
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" data-testid="paged-table-prev">
+            ‹ Prev
+          </button>
+          <span data-testid="paged-table-page-info">Page 1 of 4</span>
+          <button type="button" class="btn btn-secondary btn-sm" data-testid="paged-table-next">
+            Next ›
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" data-testid="paged-table-last">
+            Last »
+          </button>
+          <select data-testid="paged-rows-select" style="max-width: 80px">
+            <option value="3" selected>3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>5. Dynamic table</h2>
+          <span class="badge">shuffles on reload</span>
+        </div>
+        <div class="row" style="margin-bottom: 12px; align-items: center">
+          <button type="button" class="btn" data-testid="dynamic-table-reload">
+            🔄 Reload data
+          </button>
+          <span class="result-line" data-testid="dynamic-table-status">Loaded</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Salary</th>
+              </tr>
+            </thead>
+            <tbody data-testid="dynamic-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/pages/tables.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag &amp; Drop — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/navbar.css" />
+    <link rel="stylesheet" href="/styles/components.css" />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Drag &amp; Drop</h1>
+      <p class="page-intro">
+        HTML5 drag events: drag between lists, sort a list, drop into a target zone.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. Drag between lists</h2>
+        </div>
+        <div class="dnd-lists">
+          <div>
+            <h3>
+              Available
+              <span class="badge" data-testid="dnd-available-count">Available: 5</span>
+            </h3>
+            <div class="dnd-list" data-testid="dnd-available-list" id="dnd-available"></div>
+          </div>
+          <div>
+            <h3>
+              Selected
+              <span class="badge" data-testid="dnd-selected-count">Selected: 0</span>
+            </h3>
+            <div class="dnd-list" data-testid="dnd-selected-list" id="dnd-selected"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Reorderable list</h2>
+        </div>
+        <ul class="sortable-list" data-testid="sortable-list" id="sortable-list">
+          <li draggable="true" data-testid="sortable-item-1" data-id="1">Task 1 — Write tests</li>
+          <li draggable="true" data-testid="sortable-item-2" data-id="2">Task 2 — Review PR</li>
+          <li draggable="true" data-testid="sortable-item-3" data-id="3">Task 3 — Deploy</li>
+          <li draggable="true" data-testid="sortable-item-4" data-id="4">Task 4 — Update docs</li>
+          <li draggable="true" data-testid="sortable-item-5" data-id="5">Task 5 — Standup</li>
+        </ul>
+        <p class="result-line" data-testid="sortable-order-display" style="margin-top: 12px">
+          Order: <strong>1,2,3,4,5</strong>
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Drop zone</h2>
+        </div>
+        <div class="draggable-cards" id="draggable-cards">
+          <div class="draggable-card" draggable="true" data-testid="draggable-card-1" data-id="1">Card 1</div>
+          <div class="draggable-card" draggable="true" data-testid="draggable-card-2" data-id="2">Card 2</div>
+          <div class="draggable-card" draggable="true" data-testid="draggable-card-3" data-id="3">Card 3</div>
+          <div class="draggable-card" draggable="true" data-testid="draggable-card-4" data-id="4">Card 4</div>
+        </div>
+        <div class="drop-zone" data-testid="drop-zone" id="drop-zone">
+          Drop cards here
+        </div>
+        <div class="row" style="margin-top: 12px; align-items: center">
+          <span class="result-line" data-testid="drop-zone-count">Dropped: <strong>0</strong> items</span>
+          <button type="button" class="btn btn-secondary btn-sm" data-testid="dnd-reset-btn">
+            Reset
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/pages/dragdrop.ts"></script>
+  </body>
+</html>
