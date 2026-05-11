@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selects — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/qacanvas/assets/selects-0BEgdS-t.js"></script>
+    <link rel="modulepreload" crossorigin href="/qacanvas/assets/main-CkfpMqs2.js">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/main-BudSRvG9.css">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/navbar-6623w6Me.css">
+  </head>
+  <body>
+    <main>
+      <h1>Dropdowns &amp; Selects</h1>
+      <p class="page-intro">
+        Native and custom-built dropdowns: single, multi, searchable, cascading.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. Native single select</h2>
+        </div>
+        <div class="field">
+          <label for="sel-country">Country</label>
+          <select id="sel-country" data-testid="select-country">
+            <option value="">-- Select --</option>
+            <option value="Austria">Austria</option>
+            <option value="Czech Republic">Czech Republic</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Italy">Italy</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="Poland">Poland</option>
+            <option value="Spain">Spain</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+          </select>
+        </div>
+        <div class="result-line" data-testid="select-country-result" style="margin-top: 8px">
+          Selected: <strong>—</strong>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Native multi-select</h2>
+        </div>
+        <p class="section-desc">Hold Ctrl/Cmd to select multiple.</p>
+        <div class="field">
+          <label for="sel-colors">Colors</label>
+          <select id="sel-colors" data-testid="select-colors" multiple size="7">
+            <option value="Red">Red</option>
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Orange">Orange</option>
+            <option value="Purple">Purple</option>
+            <option value="Pink">Pink</option>
+          </select>
+        </div>
+        <div class="result-line" data-testid="select-colors-result" style="margin-top: 8px">
+          Selected: <strong>none</strong>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Sorted select (days of week)</h2>
+        </div>
+        <div class="field">
+          <label for="sel-days">Day</label>
+          <select id="sel-days" data-testid="select-days">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>4. Custom dropdown</h2>
+          <span class="badge">div-based, not native</span>
+        </div>
+        <div class="custom-dropdown">
+          <button
+            type="button"
+            class="custom-dropdown-trigger"
+            data-testid="custom-dropdown-trigger"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+          >
+            <span data-testid="custom-dropdown-selected">Select a language…</span>
+            <span aria-hidden="true">▾</span>
+          </button>
+          <div
+            class="custom-dropdown-list hidden"
+            data-testid="custom-dropdown-list"
+            role="listbox"
+          >
+            <button type="button" data-testid="custom-dropdown-option-javascript" data-value="JavaScript">JavaScript</button>
+            <button type="button" data-testid="custom-dropdown-option-typescript" data-value="TypeScript">TypeScript</button>
+            <button type="button" data-testid="custom-dropdown-option-python" data-value="Python">Python</button>
+            <button type="button" data-testid="custom-dropdown-option-java" data-value="Java">Java</button>
+            <button type="button" data-testid="custom-dropdown-option-csharp" data-value="C#">C#</button>
+            <button type="button" data-testid="custom-dropdown-option-go" data-value="Go">Go</button>
+            <button type="button" data-testid="custom-dropdown-option-rust" data-value="Rust">Rust</button>
+            <button type="button" data-testid="custom-dropdown-option-php" data-value="PHP">PHP</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>5. Searchable dropdown</h2>
+        </div>
+        <div class="searchable-dropdown">
+          <input
+            type="text"
+            data-testid="searchable-dropdown-input"
+            placeholder="Search cities…"
+          />
+          <div class="searchable-dropdown-list hidden" data-testid="searchable-dropdown-list"></div>
+        </div>
+        <div class="result-line" data-testid="searchable-dropdown-result" style="margin-top: 8px">
+          Selected: <strong>—</strong>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>6. Cascading dropdowns</h2>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="cascade-country">Country</label>
+            <select id="cascade-country" data-testid="cascade-country">
+              <option value="">-- Select --</option>
+              <option value="USA">United States</option>
+              <option value="Germany">Germany</option>
+              <option value="CzechRepublic">Czech Republic</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cascade-region">Region</label>
+            <select id="cascade-region" data-testid="cascade-region" disabled>
+              <option value="">-- Select country first --</option>
+            </select>
+          </div>
+        </div>
+        <div class="result-line" data-testid="cascade-result" style="margin-top: 8px">
+          Selection: <strong>—</strong>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>

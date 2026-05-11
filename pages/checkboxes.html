@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkboxes — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/qacanvas/assets/checkboxes-CxJTj5Uu.js"></script>
+    <link rel="modulepreload" crossorigin href="/qacanvas/assets/main-CkfpMqs2.js">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/main-BudSRvG9.css">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/navbar-6623w6Me.css">
+  </head>
+  <body>
+    <main>
+      <h1>Checkboxes &amp; Radio Buttons</h1>
+      <p class="page-intro">
+        Practice check / uncheck, check-all toggles, indeterminate state, and radio
+        groups.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. Single checkboxes</h2>
+        </div>
+        <div class="check-row">
+          <input type="checkbox" id="cb-terms" data-testid="checkbox-terms" />
+          <label for="cb-terms">I accept the terms &amp; conditions</label>
+        </div>
+        <div class="check-row">
+          <input type="checkbox" id="cb-newsletter" data-testid="checkbox-newsletter" />
+          <label for="cb-newsletter">Subscribe to newsletter</label>
+        </div>
+        <div class="check-row">
+          <input type="checkbox" id="cb-notifications" data-testid="checkbox-notifications" />
+          <label for="cb-notifications">Enable notifications</label>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Check-all group</h2>
+          <span class="badge">6 items</span>
+        </div>
+        <div class="check-row">
+          <input type="checkbox" id="cb-all" data-testid="checkbox-check-all" />
+          <label for="cb-all"><strong>Select all fruits</strong></label>
+        </div>
+        <div id="fruit-list" style="margin-left: 24px">
+          <div class="check-row">
+            <input type="checkbox" id="cb-apple" data-testid="checkbox-item-apple" class="fruit-item" />
+            <label for="cb-apple">Apple</label>
+          </div>
+          <div class="check-row">
+            <input type="checkbox" id="cb-banana" data-testid="checkbox-item-banana" class="fruit-item" />
+            <label for="cb-banana">Banana</label>
+          </div>
+          <div class="check-row">
+            <input type="checkbox" id="cb-cherry" data-testid="checkbox-item-cherry" class="fruit-item" />
+            <label for="cb-cherry">Cherry</label>
+          </div>
+          <div class="check-row">
+            <input type="checkbox" id="cb-date" data-testid="checkbox-item-date" class="fruit-item" />
+            <label for="cb-date">Date</label>
+          </div>
+          <div class="check-row">
+            <input type="checkbox" id="cb-elderberry" data-testid="checkbox-item-elderberry" class="fruit-item" />
+            <label for="cb-elderberry">Elderberry</label>
+          </div>
+          <div class="check-row">
+            <input type="checkbox" id="cb-fig" data-testid="checkbox-item-fig" class="fruit-item" />
+            <label for="cb-fig">Fig</label>
+          </div>
+        </div>
+        <div class="result-line" data-testid="checked-count-display" style="margin-top: 12px">
+          Selected: <strong>0 / 6</strong>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Indeterminate parent</h2>
+        </div>
+        <p class="section-desc">
+          The parent becomes indeterminate when only some children are checked.
+        </p>
+        <div class="check-row">
+          <input type="checkbox" id="cb-parent" data-testid="checkbox-parent" />
+          <label for="cb-parent"><strong>Parent</strong></label>
+        </div>
+        <div style="margin-left: 24px">
+          <div class="check-row">
+            <input type="checkbox" id="cb-c1" data-testid="checkbox-child-1" class="indet-child" />
+            <label for="cb-c1">Child 1</label>
+          </div>
+          <div class="check-row">
+            <input type="checkbox" id="cb-c2" data-testid="checkbox-child-2" class="indet-child" />
+            <label for="cb-c2">Child 2</label>
+          </div>
+          <div class="check-row">
+            <input type="checkbox" id="cb-c3" data-testid="checkbox-child-3" class="indet-child" />
+            <label for="cb-c3">Child 3</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>4. Radio groups</h2>
+        </div>
+
+        <h3 style="margin-top: 8px">Gender</h3>
+        <div class="check-row">
+          <input type="radio" id="r-gm" name="gender" value="Male" data-testid="radio-gender-male" />
+          <label for="r-gm">Male</label>
+        </div>
+        <div class="check-row">
+          <input type="radio" id="r-gf" name="gender" value="Female" data-testid="radio-gender-female" />
+          <label for="r-gf">Female</label>
+        </div>
+        <div class="check-row">
+          <input type="radio" id="r-go" name="gender" value="Other" data-testid="radio-gender-other" />
+          <label for="r-go">Other</label>
+        </div>
+        <div class="check-row">
+          <input
+            type="radio"
+            id="r-gp"
+            name="gender"
+            value="Prefer not to say"
+            data-testid="radio-gender-prefer-not"
+          />
+          <label for="r-gp">Prefer not to say</label>
+        </div>
+        <div class="result-line" data-testid="radio-gender-result" style="margin-top: 8px">
+          Selected: <strong>—</strong>
+        </div>
+
+        <h3 style="margin-top: 20px">Priority</h3>
+        <div class="check-row">
+          <input type="radio" id="r-pl" name="priority" value="Low" data-testid="radio-priority-low" />
+          <label for="r-pl">Low</label>
+        </div>
+        <div class="check-row">
+          <input
+            type="radio"
+            id="r-pm"
+            name="priority"
+            value="Medium"
+            data-testid="radio-priority-medium"
+          />
+          <label for="r-pm">Medium</label>
+        </div>
+        <div class="check-row">
+          <input
+            type="radio"
+            id="r-ph"
+            name="priority"
+            value="High"
+            data-testid="radio-priority-high"
+          />
+          <label for="r-ph">High</label>
+        </div>
+        <div class="check-row">
+          <input
+            type="radio"
+            id="r-pc"
+            name="priority"
+            value="Critical"
+            data-testid="radio-priority-critical"
+          />
+          <label for="r-pc">Critical</label>
+        </div>
+        <div class="result-line" data-testid="radio-priority-result" style="margin-top: 8px">
+          Selected: <strong>—</strong>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>

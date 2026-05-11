@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Network — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/qacanvas/assets/network-qTJ_Hd3q.js"></script>
+    <link rel="modulepreload" crossorigin href="/qacanvas/assets/main-CkfpMqs2.js">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/main-BudSRvG9.css">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/navbar-6623w6Me.css">
+  </head>
+  <body>
+    <main>
+      <h1>Network Interception Targets</h1>
+      <p class="page-intro">
+        Each button fetches a relative <code>/api/*</code> path. In Playwright tests
+        these are intercepted with <code>page.route('/api/**', …)</code>; in a regular
+        browser they return 404, which is expected.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. API endpoints</h2>
+        </div>
+        <p class="section-desc">
+          Buttons target <code>/api/users</code>, <code>/api/products</code>,
+          <code>/api/login</code>, <code>/api/slow</code>, <code>/api/error</code>.
+        </p>
+        <div class="row">
+          <button type="button" class="btn" data-testid="fetch-users-btn">GET /api/users</button>
+          <button type="button" class="btn" data-testid="fetch-products-btn">
+            GET /api/products
+          </button>
+          <button type="button" class="btn" data-testid="fetch-login-btn">POST /api/login</button>
+          <button type="button" class="btn btn-secondary" data-testid="fetch-slow-btn">
+            GET /api/slow
+          </button>
+          <button type="button" class="btn btn-danger" data-testid="fetch-error-btn">
+            GET /api/error
+          </button>
+        </div>
+
+        <div class="row" style="margin-top: 16px; align-items: center">
+          <span class="badge" data-testid="api-status-display">—</span>
+          <span class="hidden mono" data-testid="api-loading-indicator">⏳ Loading…</span>
+        </div>
+        <pre
+          class="code-block"
+          data-testid="api-response-display"
+          style="margin-top: 12px; min-height: 80px"
+        >Click a button above.</pre>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Request counter</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <span class="result-line" data-testid="request-count-display">
+            Requests made: <strong>0</strong>
+          </span>
+          <button type="button" class="btn btn-secondary btn-sm" data-testid="reset-counter-btn">
+            Reset
+          </button>
+        </div>
+      </section>
+
+      <section
+        class="section"
+        style="background: var(--color-bg-secondary); border-style: dashed"
+      >
+        <h3 style="margin-top: 0">ℹ️ Manual browser usage</h3>
+        <p style="margin-bottom: 0">
+          These endpoints don't exist on the server. Open this page from Playwright with
+          <code>page.route('**/api/**', route =&gt; route.fulfill(...))</code> to provide
+          fixture responses for each call.
+        </p>
+      </section>
+    </main>
+
+  </body>
+</html>

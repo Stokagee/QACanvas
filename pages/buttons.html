@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buttons — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/qacanvas/assets/buttons-Cd3ld7HH.js"></script>
+    <link rel="modulepreload" crossorigin href="/qacanvas/assets/main-CkfpMqs2.js">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/main-BudSRvG9.css">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/navbar-6623w6Me.css">
+  </head>
+  <body>
+    <main>
+      <h1>Buttons</h1>
+      <p class="page-intro">
+        Practice click, double-click, right-click, dynamic states, loading, and delayed
+        visibility.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. Variants</h2>
+        </div>
+        <div class="row">
+          <button type="button" class="btn" data-testid="btn-primary">Primary</button>
+          <button type="button" class="btn btn-secondary" data-testid="btn-secondary">
+            Secondary
+          </button>
+          <button type="button" class="btn btn-danger" data-testid="btn-danger">Danger</button>
+          <button type="button" class="btn" data-testid="btn-disabled" disabled>Disabled</button>
+        </div>
+        <div class="row" style="margin-top: 16px; align-items: center">
+          <button type="button" class="btn" data-testid="btn-click-counter">Click me</button>
+          <span class="result-line" data-testid="btn-click-result">Clicked: <strong>0</strong> times</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Double-click</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <button type="button" class="btn" data-testid="btn-double-click">Double-click me</button>
+          <span class="result-line" data-testid="dbl-click-result">—</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Right-click</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <button type="button" class="btn btn-secondary" data-testid="btn-right-click">
+            Right-click me
+          </button>
+          <span class="result-line" data-testid="right-click-result">—</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>4. Dynamic toggle</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <button type="button" class="btn" data-testid="btn-dynamic-toggle">START</button>
+          <span class="result-line" data-testid="dynamic-btn-state">State: <strong>idle</strong></span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>5. Loading button</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <button type="button" class="btn" data-testid="btn-loading">Run task</button>
+          <span class="hidden mono" data-testid="loading-spinner">⏳ Loading…</span>
+          <span class="result-line" data-testid="loading-result">—</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>6. Delayed button</h2>
+        </div>
+        <p class="section-desc">A button appears in the DOM after 3 seconds.</p>
+        <div class="row" style="align-items: center">
+          <span class="result-line" data-testid="delayed-countdown">Appears in 3s…</span>
+          <div id="delayed-slot"></div>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>

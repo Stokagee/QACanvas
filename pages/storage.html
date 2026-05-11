@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/qacanvas/assets/storage-BYouCx_M.js"></script>
+    <link rel="modulepreload" crossorigin href="/qacanvas/assets/main-CkfpMqs2.js">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/main-BudSRvG9.css">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/navbar-6623w6Me.css">
+  </head>
+  <body>
+    <main>
+      <h1>Cookies &amp; Web Storage</h1>
+      <p class="page-intro">
+        Practice <code>localStorage</code>, <code>sessionStorage</code>, and document
+        cookies — CRUD plus a survives-reload persistence test.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. localStorage</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <input type="text" placeholder="Key" data-testid="ls-key-input" style="max-width: 140px" />
+          <input type="text" placeholder="Value" data-testid="ls-value-input" style="max-width: 200px" />
+          <button type="button" class="btn btn-sm" data-testid="ls-set-btn">Set</button>
+          <button type="button" class="btn btn-sm btn-secondary" data-testid="ls-get-btn">Get</button>
+          <button type="button" class="btn btn-sm btn-secondary" data-testid="ls-remove-btn">
+            Remove
+          </button>
+          <button type="button" class="btn btn-sm btn-danger" data-testid="ls-clear-btn">
+            Clear all
+          </button>
+        </div>
+        <p class="result-line" data-testid="ls-result" style="margin-top: 12px">—</p>
+        <div class="table-wrap" style="margin-top: 12px">
+          <table>
+            <thead>
+              <tr><th>Key</th><th>Value</th></tr>
+            </thead>
+            <tbody data-testid="ls-all-items"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. sessionStorage</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <input type="text" placeholder="Key" data-testid="ss-key-input" style="max-width: 140px" />
+          <input type="text" placeholder="Value" data-testid="ss-value-input" style="max-width: 200px" />
+          <button type="button" class="btn btn-sm" data-testid="ss-set-btn">Set</button>
+          <button type="button" class="btn btn-sm btn-secondary" data-testid="ss-get-btn">Get</button>
+        </div>
+        <p class="result-line" data-testid="ss-result" style="margin-top: 12px">—</p>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Cookies</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <input type="text" placeholder="Name" data-testid="cookie-name-input" style="max-width: 140px" />
+          <input type="text" placeholder="Value" data-testid="cookie-value-input" style="max-width: 200px" />
+          <button type="button" class="btn btn-sm" data-testid="cookie-set-btn">Set</button>
+          <button type="button" class="btn btn-sm btn-secondary" data-testid="cookie-get-btn">
+            Get
+          </button>
+          <button type="button" class="btn btn-sm btn-danger" data-testid="cookie-delete-btn">
+            Delete
+          </button>
+        </div>
+        <p class="result-line" data-testid="cookie-result" style="margin-top: 12px">—</p>
+        <pre class="code-block" data-testid="cookie-all-display" style="margin-top: 12px">No cookies</pre>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>4. Persistence test</h2>
+          <span class="badge">survives reload</span>
+        </div>
+        <p class="section-desc">
+          Save a value, reload the page — the value below should still be there.
+        </p>
+        <div class="row" style="align-items: center">
+          <input
+            type="text"
+            placeholder="Value to persist"
+            data-testid="persist-input"
+            style="max-width: 240px"
+          />
+          <button type="button" class="btn btn-sm" data-testid="persist-save-btn">Save</button>
+          <button type="button" class="btn btn-sm btn-secondary" data-testid="persist-reload-btn">
+            Reload
+          </button>
+        </div>
+        <p class="result-line" data-testid="persist-result" style="margin-top: 12px">
+          On load: <strong>—</strong>
+        </p>
+      </section>
+    </main>
+
+  </body>
+</html>

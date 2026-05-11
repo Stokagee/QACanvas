@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login — QACanvas</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/qacanvas/assets/login-DHzTnoYI.js"></script>
+    <link rel="modulepreload" crossorigin href="/qacanvas/assets/main-CkfpMqs2.js">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/main-BudSRvG9.css">
+  </head>
+  <body>
+    <main class="login-shell">
+      <div class="login-card">
+        <div class="login-header">
+          <div>
+            <h1>Sign in</h1>
+            <p style="margin: 0; color: var(--color-text-secondary); font-size: 0.9rem">
+              QACanvas — practice playground
+            </p>
+          </div>
+          <button
+            type="button"
+            class="btn btn-ghost btn-icon"
+            data-testid="theme-toggle"
+            aria-label="Toggle theme"
+          >
+            🌓
+          </button>
+        </div>
+
+        <form data-testid="login-form" id="login-form" novalidate>
+          <div class="field">
+            <label for="username">Username</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              autocomplete="username"
+              data-testid="username-input"
+              required
+            />
+          </div>
+
+          <div class="field" style="margin-top: 12px">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              data-testid="password-input"
+              required
+            />
+          </div>
+
+          <div
+            class="error-msg hidden"
+            data-testid="login-error-msg"
+            id="login-error"
+            role="alert"
+            style="margin-top: 12px"
+          >
+            Invalid username or password.
+          </div>
+
+          <button
+            type="submit"
+            class="btn"
+            data-testid="login-btn"
+            style="margin-top: 18px"
+          >
+            Sign in
+          </button>
+        </form>
+
+        <p class="login-hint">
+          Hint: <code>admin</code> / <code>admin123</code>
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

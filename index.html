@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QACanvas — Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/qacanvas/assets/main-D0UtH6X0.js"></script>
+    <link rel="modulepreload" crossorigin href="/qacanvas/assets/main-CkfpMqs2.js">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/main-BudSRvG9.css">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/navbar-6623w6Me.css">
+  </head>
+  <body>
+    <main>
+      <h1>QACanvas</h1>
+      <p class="page-intro">
+        A practice playground for Playwright (TypeScript). Every page targets a specific
+        type of UI element or Playwright feature. Pick a section below to start practicing.
+      </p>
+
+      <div class="cards-grid" data-testid="home-grid">
+        <a href="pages/inputs.html" class="nav-card" data-testid="nav-card-inputs">
+          <span class="nav-card-icon">⌨️</span>
+          <h2 class="nav-card-title">Inputs</h2>
+          <p class="nav-card-desc">Text, number, password, range, color, datalist, and more.</p>
+        </a>
+        <a href="pages/buttons.html" class="nav-card" data-testid="nav-card-buttons">
+          <span class="nav-card-icon">🖱️</span>
+          <h2 class="nav-card-title">Buttons</h2>
+          <p class="nav-card-desc">Click, double-click, right-click, loading, delayed.</p>
+        </a>
+        <a href="pages/checkboxes.html" class="nav-card" data-testid="nav-card-checkboxes">
+          <span class="nav-card-icon">☑️</span>
+          <h2 class="nav-card-title">Checkboxes</h2>
+          <p class="nav-card-desc">Single, check-all, indeterminate, radio groups.</p>
+        </a>
+        <a href="pages/selects.html" class="nav-card" data-testid="nav-card-selects">
+          <span class="nav-card-icon">📋</span>
+          <h2 class="nav-card-title">Selects</h2>
+          <p class="nav-card-desc">Native, multi, custom, searchable, cascading dropdowns.</p>
+        </a>
+        <a href="pages/forms.html" class="nav-card" data-testid="nav-card-forms">
+          <span class="nav-card-icon">📝</span>
+          <h2 class="nav-card-title">Forms</h2>
+          <p class="nav-card-desc">Full registration form with client-side validation.</p>
+        </a>
+        <a href="pages/tables.html" class="nav-card" data-testid="nav-card-tables">
+          <span class="nav-card-icon">📊</span>
+          <h2 class="nav-card-title">Tables</h2>
+          <p class="nav-card-desc">Static, sortable, filterable, paginated, dynamic tables.</p>
+        </a>
+        <a href="pages/alerts.html" class="nav-card" data-testid="nav-card-alerts">
+          <span class="nav-card-icon">🔔</span>
+          <h2 class="nav-card-title">Alerts</h2>
+          <p class="nav-card-desc">JS alert/confirm/prompt, custom and nested modals.</p>
+        </a>
+        <a href="pages/iframes.html" class="nav-card" data-testid="nav-card-iframes">
+          <span class="nav-card-icon">🖼️</span>
+          <h2 class="nav-card-title">Iframes</h2>
+          <p class="nav-card-desc">Simple, form-containing, and nested iframes.</p>
+        </a>
+        <a href="pages/dragdrop.html" class="nav-card" data-testid="nav-card-dragdrop">
+          <span class="nav-card-icon">↕️</span>
+          <h2 class="nav-card-title">Drag &amp; Drop</h2>
+          <p class="nav-card-desc">Drag between lists, sort, drop into zone.</p>
+        </a>
+        <a href="pages/hover.html" class="nav-card" data-testid="nav-card-hover">
+          <span class="nav-card-icon">🎯</span>
+          <h2 class="nav-card-title">Hover</h2>
+          <p class="nav-card-desc">Tooltips, hover actions, right-click context menus.</p>
+        </a>
+        <a href="pages/keyboard.html" class="nav-card" data-testid="nav-card-keyboard">
+          <span class="nav-card-icon">🎹</span>
+          <h2 class="nav-card-title">Keyboard</h2>
+          <p class="nav-card-desc">Key press, shortcuts, tab order, arrow navigation.</p>
+        </a>
+        <a href="pages/scroll.html" class="nav-card" data-testid="nav-card-scroll">
+          <span class="nav-card-icon">📜</span>
+          <h2 class="nav-card-title">Scroll</h2>
+          <p class="nav-card-desc">Scroll to element, infinite scroll, sticky, tracker.</p>
+        </a>
+        <a href="pages/dynamic.html" class="nav-card" data-testid="nav-card-dynamic">
+          <span class="nav-card-icon">⚡</span>
+          <h2 class="nav-card-title">Dynamic</h2>
+          <p class="nav-card-desc">Appearing, disappearing, skeleton, rotating content.</p>
+        </a>
+        <a href="pages/tabs.html" class="nav-card" data-testid="nav-card-tabs">
+          <span class="nav-card-icon">🗂️</span>
+          <h2 class="nav-card-title">Tabs</h2>
+          <p class="nav-card-desc">New tab, popup window, cross-tab broadcast.</p>
+        </a>
+        <a
+          href="pages/shadow-dom.html"
+          class="nav-card"
+          data-testid="nav-card-shadow-dom"
+        >
+          <span class="nav-card-icon">👻</span>
+          <h2 class="nav-card-title">Shadow DOM</h2>
+          <p class="nav-card-desc">Simple, nested, and form inside shadow roots.</p>
+        </a>
+        <a href="pages/network.html" class="nav-card" data-testid="nav-card-network">
+          <span class="nav-card-icon">🌐</span>
+          <h2 class="nav-card-title">Network</h2>
+          <p class="nav-card-desc">Targets for <code>page.route()</code> interception.</p>
+        </a>
+        <a href="pages/storage.html" class="nav-card" data-testid="nav-card-storage">
+          <span class="nav-card-icon">💾</span>
+          <h2 class="nav-card-title">Storage</h2>
+          <p class="nav-card-desc">localStorage, sessionStorage, cookies — CRUD &amp; persist.</p>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

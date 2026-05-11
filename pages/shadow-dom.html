@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shadow DOM — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/qacanvas/assets/shadowDom-BeXKr_vL.js"></script>
+    <link rel="modulepreload" crossorigin href="/qacanvas/assets/main-CkfpMqs2.js">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/main-BudSRvG9.css">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/navbar-6623w6Me.css">
+  </head>
+  <body>
+    <main>
+      <h1>Shadow DOM</h1>
+      <p class="page-intro">
+        Practice locating elements inside open shadow roots. All hosts use
+        <code>mode: 'open'</code>.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. Simple shadow root</h2>
+        </div>
+        <my-widget data-testid="shadow-host-1"></my-widget>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Nested shadow DOM</h2>
+        </div>
+        <nested-outer data-testid="shadow-host-outer"></nested-outer>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Shadow form</h2>
+        </div>
+        <shadow-form data-testid="shadow-form-host"></shadow-form>
+      </section>
+    </main>
+
+  </body>
+</html>

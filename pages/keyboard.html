@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/qacanvas/assets/keyboard-DamJFh-I.js"></script>
+    <link rel="modulepreload" crossorigin href="/qacanvas/assets/main-CkfpMqs2.js">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/main-BudSRvG9.css">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/navbar-6623w6Me.css">
+  </head>
+  <body>
+    <main>
+      <h1>Keyboard</h1>
+      <p class="page-intro">
+        Practice <code>keyboard.press()</code>, <code>type()</code>, modifier shortcuts,
+        and tab / arrow navigation.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. Key press logger</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <input
+            type="text"
+            data-testid="keypress-input"
+            placeholder="Type or press any key…"
+          />
+          <span class="result-line" data-testid="keypress-log">Last key: <strong>—</strong></span>
+          <span class="badge" data-testid="keypress-count">Total: 0</span>
+          <button type="button" class="btn btn-secondary btn-sm" data-testid="keypress-clear">
+            Clear
+          </button>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Shortcuts</h2>
+          <span class="badge">Ctrl+S · Ctrl+Z · Esc</span>
+        </div>
+        <p class="section-desc">
+          Focus the area below, then press the listed combos.
+        </p>
+        <div
+          tabindex="0"
+          data-testid="shortcut-focus-area"
+          id="shortcut-area"
+          style="
+            padding: 24px;
+            border: 2px dashed var(--color-border);
+            border-radius: var(--radius);
+            background: var(--color-bg-secondary);
+            outline: none;
+            cursor: text;
+          "
+        >
+          Click here to focus, then try <code>Ctrl+S</code>, <code>Ctrl+Z</code>, or
+          <code>Escape</code>.
+        </div>
+
+        <div class="row" style="margin-top: 12px">
+          <span class="result-line" data-testid="shortcut-save-result">—</span>
+          <span class="result-line" data-testid="shortcut-undo-result">—</span>
+        </div>
+
+        <div style="margin-top: 16px">
+          <button type="button" class="btn" data-testid="shortcut-open-panel-btn">
+            Open panel
+          </button>
+          <div
+            class="hidden"
+            data-testid="shortcut-panel"
+            id="shortcut-panel"
+            style="
+              margin-top: 12px;
+              padding: 16px;
+              border: 1px solid var(--color-border);
+              border-radius: var(--radius);
+              background: var(--color-bg-card);
+            "
+          >
+            <p style="margin: 0">This panel can be closed with <code>Escape</code>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Tab order</h2>
+        </div>
+        <form class="tab-form row" id="tab-form" autocomplete="off">
+          <input type="text" placeholder="Field 1" data-testid="tab-field-1" name="f1" />
+          <input type="text" placeholder="Field 2" data-testid="tab-field-2" name="f2" />
+          <input type="text" placeholder="Field 3" data-testid="tab-field-3" name="f3" />
+          <input type="text" placeholder="Field 4" data-testid="tab-field-4" name="f4" />
+          <input type="text" placeholder="Field 5" data-testid="tab-field-5" name="f5" />
+        </form>
+        <div class="result-line" data-testid="tab-focus-indicator" style="margin-top: 12px">
+          Currently focused: <strong>none</strong>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>4. Arrow navigation</h2>
+        </div>
+        <p class="section-desc">
+          Focus the list, then use ↑/↓ to move between items.
+        </p>
+        <ul
+          class="arrow-nav-list"
+          data-testid="arrow-nav-list"
+          id="arrow-nav-list"
+          tabindex="0"
+        >
+          <li data-testid="arrow-nav-item-1">Item 1</li>
+          <li data-testid="arrow-nav-item-2">Item 2</li>
+          <li data-testid="arrow-nav-item-3">Item 3</li>
+          <li data-testid="arrow-nav-item-4">Item 4</li>
+          <li data-testid="arrow-nav-item-5">Item 5</li>
+        </ul>
+        <div class="result-line" data-testid="arrow-nav-selected" style="margin-top: 12px">
+          Selected: <strong>—</strong>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>

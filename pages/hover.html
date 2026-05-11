@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hover — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/qacanvas/assets/hover-h24tLHkE.js"></script>
+    <link rel="modulepreload" crossorigin href="/qacanvas/assets/main-CkfpMqs2.js">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/main-BudSRvG9.css">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/navbar-6623w6Me.css">
+  </head>
+  <body>
+    <main>
+      <h1>Hover, Tooltips, Context Menu</h1>
+      <p class="page-intro">
+        Practice hover states, tooltip visibility, right-click context menus, and
+        before/after hover swaps.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. Tooltips (4 positions)</h2>
+        </div>
+        <div class="row" style="gap: 40px; padding: 32px 16px">
+          <span class="tooltip-wrap">
+            <button type="button" class="btn btn-secondary" data-testid="hover-tooltip-top">
+              Top
+            </button>
+            <span class="tooltip top" data-testid="tooltip-top-content">Tooltip on top</span>
+          </span>
+          <span class="tooltip-wrap">
+            <button type="button" class="btn btn-secondary" data-testid="hover-tooltip-right">
+              Right
+            </button>
+            <span class="tooltip right" data-testid="tooltip-right-content">Tooltip on right</span>
+          </span>
+          <span class="tooltip-wrap">
+            <button type="button" class="btn btn-secondary" data-testid="hover-tooltip-bottom">
+              Bottom
+            </button>
+            <span class="tooltip bottom" data-testid="tooltip-bottom-content">Tooltip on bottom</span>
+          </span>
+          <span class="tooltip-wrap">
+            <button type="button" class="btn btn-secondary" data-testid="hover-tooltip-left">
+              Left
+            </button>
+            <span class="tooltip left" data-testid="tooltip-left-content">Tooltip on left</span>
+          </span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Hover card</h2>
+          <span class="badge">action buttons reveal on hover</span>
+        </div>
+        <div class="hover-card" data-testid="hover-card">
+          <h3 style="margin: 0 0 6px">Project Apollo</h3>
+          <p style="margin: 0; color: var(--color-text-secondary)">
+            Lead a small spacecraft team to the moon. Status: planning.
+          </p>
+          <div class="hover-actions">
+            <button type="button" class="btn btn-sm btn-secondary" data-testid="hover-card-edit-btn">
+              Edit
+            </button>
+            <button type="button" class="btn btn-sm btn-danger" data-testid="hover-card-delete-btn">
+              Delete
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Right-click context menu</h2>
+        </div>
+        <p class="section-desc">Right-click on the area below.</p>
+        <div
+          data-testid="right-click-area"
+          id="rc-area"
+          style="
+            border: 2px dashed var(--color-border);
+            border-radius: var(--radius);
+            padding: 40px;
+            text-align: center;
+            color: var(--color-text-secondary);
+            position: relative;
+            user-select: none;
+          "
+        >
+          Right-click anywhere in this box
+        </div>
+
+        <div class="context-menu hidden" data-testid="context-menu" id="rc-menu">
+          <button type="button" data-testid="context-menu-edit">✎ Edit</button>
+          <button type="button" data-testid="context-menu-copy">📋 Copy</button>
+          <button type="button" data-testid="context-menu-delete">🗑 Delete</button>
+          <button type="button" data-testid="context-menu-share">↗ Share</button>
+        </div>
+
+        <div class="result-line" data-testid="context-menu-result" style="margin-top: 12px">
+          Last action: <strong>—</strong>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>4. Hover image swap</h2>
+        </div>
+        <div class="hover-image-container" data-testid="hover-image-container">
+          <div class="hover-image before" data-testid="hover-image-before">Before</div>
+          <div class="hover-image after" data-testid="hover-image-after">After</div>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>

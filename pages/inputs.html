@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inputs — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/qacanvas/assets/inputs-D2COSfc-.js"></script>
+    <link rel="modulepreload" crossorigin href="/qacanvas/assets/main-CkfpMqs2.js">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/main-BudSRvG9.css">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/navbar-6623w6Me.css">
+  </head>
+  <body>
+    <main>
+      <h1>Inputs</h1>
+      <p class="page-intro">
+        Practice locator strategies (placeholder, label, role, test id) and attribute
+        assertions across every common input type.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. Text Inputs</h2>
+          <span class="badge">getByPlaceholder · getByLabel · getByRole</span>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label>Standard text</label>
+            <input type="text" data-testid="input-text" placeholder="Enter text" />
+          </div>
+          <div class="field">
+            <label>Disabled</label>
+            <input type="text" data-testid="input-disabled" disabled value="Cannot edit" />
+          </div>
+          <div class="field">
+            <label>Readonly</label>
+            <input
+              type="text"
+              data-testid="input-readonly"
+              readonly
+              value="Read only value"
+            />
+          </div>
+          <div class="field">
+            <label>aria-label only</label>
+            <input
+              type="text"
+              aria-label="Search field"
+              data-testid="input-aria-label"
+              placeholder="aria-label='Search field'"
+            />
+          </div>
+          <div class="field">
+            <label for="email-field">Email address</label>
+            <input
+              type="email"
+              id="email-field"
+              data-testid="input-email"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="field">
+            <label>Placeholder only</label>
+            <input
+              type="text"
+              data-testid="input-placeholder"
+              placeholder="Type your name here"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. Number, Password, Tel, URL</h2>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label>Number</label>
+            <input type="number" data-testid="input-number" min="0" max="100" step="1" />
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input type="password" data-testid="input-password" placeholder="••••••••" />
+          </div>
+          <div class="field">
+            <label>Telephone</label>
+            <input type="tel" data-testid="input-tel" placeholder="+420 123 456 789" />
+          </div>
+          <div class="field">
+            <label>URL</label>
+            <input type="url" data-testid="input-url" placeholder="https://example.com" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. Textarea</h2>
+        </div>
+        <div class="row">
+          <div class="field" style="max-width: 360px">
+            <label>Resizable</label>
+            <textarea data-testid="textarea-basic" placeholder="Write something…"></textarea>
+          </div>
+          <div class="field" style="max-width: 360px">
+            <label>Max length 100</label>
+            <textarea
+              data-testid="textarea-max-length"
+              maxlength="100"
+              placeholder="Up to 100 characters"
+            ></textarea>
+            <p class="help" data-testid="textarea-counter">0 / 100 characters</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>4. Range slider</h2>
+        </div>
+        <div class="range-row">
+          <input
+            type="range"
+            data-testid="input-range"
+            min="0"
+            max="100"
+            value="50"
+          />
+          <span class="mono" data-testid="range-value-display">50</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>5. Color picker</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <input type="color" data-testid="input-color" value="#6366f1" />
+          <span class="mono" data-testid="color-value-display">#6366f1</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>6. Search</h2>
+          <span class="badge">filter + clear</span>
+        </div>
+        <p class="section-desc">Type to filter the list below; click ✕ to clear.</p>
+        <div class="row" style="align-items: center">
+          <input
+            type="search"
+            data-testid="input-search"
+            placeholder="Search fruits…"
+            style="max-width: 240px"
+          />
+          <button
+            type="button"
+            class="btn btn-ghost btn-sm"
+            data-testid="search-clear-btn"
+          >
+            ✕ Clear
+          </button>
+          <span class="badge" data-testid="search-result-count">10 results</span>
+        </div>
+        <ul id="search-list" style="margin-top: 12px; padding-left: 18px"></ul>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>7. Datalist (autocomplete)</h2>
+        </div>
+        <div class="field">
+          <label for="country-datalist">Country</label>
+          <input
+            type="text"
+            list="countries"
+            id="country-datalist"
+            data-testid="input-datalist"
+            placeholder="Start typing…"
+          />
+          <datalist id="countries">
+            <option value="Austria"></option>
+            <option value="Belgium"></option>
+            <option value="Czech Republic"></option>
+            <option value="Denmark"></option>
+            <option value="Estonia"></option>
+            <option value="Finland"></option>
+            <option value="France"></option>
+            <option value="Germany"></option>
+            <option value="Hungary"></option>
+            <option value="Italy"></option>
+          </datalist>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>

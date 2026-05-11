@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alerts — QACanvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        var t = localStorage.getItem('qacanvas-theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/qacanvas/assets/alerts-BufpgUpG.js"></script>
+    <link rel="modulepreload" crossorigin href="/qacanvas/assets/main-CkfpMqs2.js">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/main-BudSRvG9.css">
+    <link rel="stylesheet" crossorigin href="/qacanvas/assets/navbar-6623w6Me.css">
+  </head>
+  <body>
+    <main>
+      <h1>Alerts &amp; Modals</h1>
+      <p class="page-intro">
+        JS dialogs (<code>alert</code>, <code>confirm</code>, <code>prompt</code>) plus
+        custom HTML modals: single, nested, and auto-close.
+      </p>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>1. JS alert</h2>
+          <span class="badge">page.on('dialog')</span>
+        </div>
+        <div class="row" style="align-items: center">
+          <button type="button" class="btn" data-testid="trigger-alert-btn">Show alert</button>
+          <span class="result-line" data-testid="alert-result">—</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>2. JS confirm</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <button type="button" class="btn" data-testid="trigger-confirm-btn">Show confirm</button>
+          <span class="result-line" data-testid="confirm-result">—</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>3. JS prompt</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <button type="button" class="btn" data-testid="trigger-prompt-btn">Show prompt</button>
+          <span class="result-line" data-testid="prompt-result">—</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>4. Custom modal</h2>
+        </div>
+        <div class="row" style="align-items: center">
+          <button type="button" class="btn" data-testid="open-modal-btn">Open modal</button>
+          <span class="result-line" data-testid="modal-result">—</span>
+        </div>
+
+        <div class="modal-backdrop hidden" data-testid="custom-modal" id="custom-modal" role="dialog" aria-modal="true">
+          <div class="modal">
+            <button type="button" class="modal-close-x" data-testid="modal-close-x">✕</button>
+            <h3 data-testid="modal-title">Custom modal</h3>
+            <p data-testid="modal-body">
+              This is a regular HTML modal — not a JS dialog. Confirm or cancel below.
+            </p>
+            <div class="modal-actions">
+              <button type="button" class="btn btn-secondary" data-testid="modal-cancel-btn">
+                Cancel
+              </button>
+              <button type="button" class="btn" data-testid="modal-confirm-btn">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>5. Nested modals</h2>
+        </div>
+        <button type="button" class="btn" data-testid="open-modal-a-btn">Open modal A</button>
+
+        <div class="modal-backdrop hidden" data-testid="modal-a" id="modal-a" role="dialog" aria-modal="true">
+          <div class="modal">
+            <h3>Modal A</h3>
+            <p>This is the outer modal. Open another from inside.</p>
+            <div class="modal-actions">
+              <button type="button" class="btn btn-secondary" data-testid="modal-a-close">
+                Close A
+              </button>
+              <button type="button" class="btn" data-testid="open-modal-b-btn">Open modal B</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-backdrop hidden" data-testid="modal-b" id="modal-b" role="dialog" aria-modal="true" style="z-index: 110">
+          <div class="modal">
+            <h3>Modal B</h3>
+            <p>Inner modal, opened from A.</p>
+            <div class="modal-actions">
+              <button type="button" class="btn btn-secondary" data-testid="modal-b-close">
+                Close B
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">
+          <h2>6. Auto-close modal</h2>
+        </div>
+        <p class="section-desc">Closes by itself 3 seconds after opening.</p>
+        <button type="button" class="btn" data-testid="trigger-timed-modal-btn">
+          Open timed modal
+        </button>
+
+        <div class="modal-backdrop hidden" data-testid="timed-modal" id="timed-modal" role="dialog" aria-modal="true">
+          <div class="modal">
+            <h3>This will close on its own</h3>
+            <p data-testid="timed-modal-countdown">Closing in 3…</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>
