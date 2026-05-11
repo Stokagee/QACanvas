@@ -1,4 +1,4 @@
-import{i as t}from"./main-0BzdE9zQ.js";/* empty css               */t({active:"iframes"});const e=`
+import{i as t}from"./main-DhNBx2QF.js";t({active:"iframes"});const e=`
   body { font-family: system-ui, sans-serif; margin: 12px; color: #1a1a2e; }
   input, button { font-family: inherit; font-size: 0.9rem; padding: 6px 10px; border-radius: 6px; border: 1px solid #d1d5db; }
   button { background: #6366f1; color: white; border: none; cursor: pointer; }
