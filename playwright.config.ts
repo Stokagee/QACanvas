@@ -25,7 +25,7 @@ export default defineConfig({
     video: 'retain-on-failure',
     actionTimeout: 5_000,
     navigationTimeout: 7_000,
-    baseURL: 'http://localhost:5173/QACanvas/login.ht',
+    baseURL: 'http://localhost:5173/QACanvas/',
     trace: 'on',
     testIdAttribute: 'data-testid'
   },
