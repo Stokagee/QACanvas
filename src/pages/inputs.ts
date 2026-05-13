@@ -84,6 +84,23 @@ telInput.addEventListener('input', () => {
     const pos = telInput.selectionStart ?? cleaned.length;
     telInput.value = cleaned;
     telInput.setSelectionRange(pos, pos);
+// Email validation
+const emailInput = document.querySelector<HTMLInputElement>('[data-testid="input-email"]')!;
+const validateEmailBtn = document.querySelector<HTMLButtonElement>('[data-testid="validate-email-btn"]')!;
+const emailError = document.querySelector<HTMLElement>('[data-testid="input-email-error"]')!;
+
+validateEmailBtn.addEventListener('click', () => {
+  emailError.style.color = '';
+  if (emailInput.value.trim() === '') {
+    emailError.className = 'error-msg';
+    emailError.textContent = 'Email is required.';
+  } else if (!emailInput.validity.valid) {
+    emailError.className = 'error-msg';
+    emailError.textContent = 'Enter a valid email address.';
+  } else {
+    emailError.className = 'help';
+    emailError.style.color = 'var(--color-success)';
+    emailError.textContent = '✓ Valid email';
   }
 });
 

@@ -70,6 +70,13 @@
               placeholder="Enter email"
             />
             <p class="limit-msg" data-testid="input-email-limit-msg">Maximum 234 characters reached.</p>
+            <button
+              type="button"
+              class="btn btn-secondary btn-sm"
+              data-testid="validate-email-btn"
+              style="align-self: flex-start"
+            >Validate</button>
+            <div class="error-msg hidden" data-testid="input-email-error"></div>
           </div>
           <div class="field">
             <label>Placeholder only</label>
@@ -87,6 +94,7 @@
       <section class="section">
         <div class="section-title">
           <h2>2. Number, Password, Tel, URL</h2>
+          <span class="badge">type · min/max · step · attribute assertions</span>
         </div>
         <div class="row">
           <div class="field">
@@ -114,6 +122,7 @@
       <section class="section">
         <div class="section-title">
           <h2>3. Textarea</h2>
+          <span class="badge">fill · maxlength · char counter</span>
         </div>
         <div class="row">
           <div class="field" style="max-width: 360px">
@@ -136,6 +145,7 @@
       <section class="section">
         <div class="section-title">
           <h2>4. Range slider</h2>
+          <span class="badge">fill · keyboard · input event</span>
         </div>
         <div class="range-row">
           <input
@@ -152,6 +162,7 @@
       <section class="section">
         <div class="section-title">
           <h2>5. Color picker</h2>
+          <span class="badge">fill · attribute value</span>
         </div>
         <div class="row" style="align-items: center">
           <input type="color" data-testid="input-color" value="#6366f1" />
@@ -189,6 +200,7 @@
       <section class="section">
         <div class="section-title">
           <h2>7. Datalist (autocomplete)</h2>
+          <span class="badge">type + suggestion · list attribute</span>
         </div>
         <div class="field">
           <label for="country-datalist">Country</label>
