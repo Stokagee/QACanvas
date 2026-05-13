@@ -8,8 +8,10 @@ export async function QALogin(page: Page, username: string, password: string) {
     const loginInput: Locator = loginTable.getByTestId("username-input");
     const passwordInput: Locator = loginTable.getByTestId("password-input");
 
-    await loginInput.fill("admin");
-    await passwordInput.fill("admin123")
+    await loginInput.fill(username);
+    await passwordInput.fill(password);
+    await expect(loginInput).toHaveValue(username);
+    await expect(passwordInput).toHaveValue(password);
     await loginTable.getByTestId("login-btn").click();
     
      await expect(page).toHaveTitle("QACanvas — Home");

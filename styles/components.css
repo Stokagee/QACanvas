@@ -140,6 +140,17 @@ label {
   margin-top: 2px;
 }
 
+.limit-msg {
+  font-size: 0.8rem;
+  color: var(--color-warning);
+  margin-top: 2px;
+  display: none;
+}
+
+.limit-msg.visible {
+  display: block;
+}
+
 /* Cards (home grid) */
 .cards-grid {
   display: grid;
