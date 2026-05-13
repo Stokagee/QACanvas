@@ -84,6 +84,9 @@ telInput.addEventListener('input', () => {
     const pos = telInput.selectionStart ?? cleaned.length;
     telInput.value = cleaned;
     telInput.setSelectionRange(pos, pos);
+  }
+});
+
 // Email validation
 const emailInput = document.querySelector<HTMLInputElement>('[data-testid="input-email"]')!;
 const validateEmailBtn = document.querySelector<HTMLButtonElement>('[data-testid="validate-email-btn"]')!;
