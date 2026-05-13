@@ -16,9 +16,9 @@
         if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
       } catch (e) {}
     </script>
-    <script type="module" crossorigin src="/QACanvas/assets/inputs-BMbM0oA0.js"></script>
-    <link rel="modulepreload" crossorigin href="/QACanvas/assets/main-DhNBx2QF.js">
-    <link rel="stylesheet" crossorigin href="/QACanvas/assets/main-CUOc5wKk.css">
+    <script type="module" crossorigin src="/QACanvas/assets/inputs-BBuQDiQZ.js"></script>
+    <link rel="modulepreload" crossorigin href="/QACanvas/assets/main-DFFTVTx1.js">
+    <link rel="stylesheet" crossorigin href="/QACanvas/assets/main-wY_MAg_2.css">
   </head>
   <body>
     <main>
@@ -36,7 +36,8 @@
         <div class="row">
           <div class="field">
             <label>Standard text</label>
-            <input type="text" data-testid="input-text" placeholder="Enter text" />
+            <input type="text" data-testid="input-text" maxlength="234" placeholder="Enter text" />
+            <p class="limit-msg" data-testid="input-text-limit-msg">Maximum 234 characters reached.</p>
           </div>
           <div class="field">
             <label>Disabled</label>
@@ -57,8 +58,10 @@
               type="text"
               aria-label="Search field"
               data-testid="input-aria-label"
+              maxlength="234"
               placeholder="aria-label='Search field'"
             />
+            <p class="limit-msg" data-testid="input-aria-label-limit-msg">Maximum 234 characters reached.</p>
           </div>
           <div class="field">
             <label for="email-field">Email address</label>
@@ -66,8 +69,10 @@
               type="email"
               id="email-field"
               data-testid="input-email"
+              maxlength="234"
               placeholder="Enter email"
             />
+            <p class="limit-msg" data-testid="input-email-limit-msg">Maximum 234 characters reached.</p>
             <button
               type="button"
               class="btn btn-secondary btn-sm"
@@ -81,8 +86,10 @@
             <input
               type="text"
               data-testid="input-placeholder"
+              maxlength="234"
               placeholder="Type your name here"
             />
+            <p class="limit-msg" data-testid="input-placeholder-limit-msg">Maximum 234 characters reached.</p>
           </div>
         </div>
       </section>
@@ -99,15 +106,18 @@
           </div>
           <div class="field">
             <label>Password</label>
-            <input type="password" data-testid="input-password" placeholder="••••••••" />
+            <input type="password" data-testid="input-password" maxlength="234" placeholder="••••••••" />
+            <p class="limit-msg" data-testid="input-password-limit-msg">Maximum 234 characters reached.</p>
           </div>
           <div class="field">
             <label>Telephone</label>
-            <input type="tel" data-testid="input-tel" placeholder="+420 123 456 789" />
+            <input type="tel" data-testid="input-tel" maxlength="234" placeholder="+420 123 456 789" />
+            <p class="limit-msg" data-testid="input-tel-limit-msg">Maximum 234 characters reached.</p>
           </div>
           <div class="field">
             <label>URL</label>
-            <input type="url" data-testid="input-url" placeholder="https://example.com" />
+            <input type="url" data-testid="input-url" maxlength="234" placeholder="https://example.com" />
+            <p class="limit-msg" data-testid="input-url-limit-msg">Maximum 234 characters reached.</p>
           </div>
         </div>
       </section>
@@ -120,7 +130,8 @@
         <div class="row">
           <div class="field" style="max-width: 360px">
             <label>Resizable</label>
-            <textarea data-testid="textarea-basic" placeholder="Write something…"></textarea>
+            <textarea data-testid="textarea-basic" maxlength="234" placeholder="Write something…"></textarea>
+            <p class="limit-msg" data-testid="textarea-basic-limit-msg">Maximum 234 characters reached.</p>
           </div>
           <div class="field" style="max-width: 360px">
             <label>Max length 100</label>
@@ -172,6 +183,7 @@
           <input
             type="search"
             data-testid="input-search"
+            maxlength="234"
             placeholder="Search fruits…"
             style="max-width: 240px"
           />
@@ -184,6 +196,7 @@
           </button>
           <span class="badge" data-testid="search-result-count">10 results</span>
         </div>
+        <p class="limit-msg" data-testid="input-search-limit-msg">Maximum 234 characters reached.</p>
         <ul id="search-list" style="margin-top: 12px; padding-left: 18px"></ul>
       </section>
 
@@ -199,8 +212,10 @@
             list="countries"
             id="country-datalist"
             data-testid="input-datalist"
+            maxlength="234"
             placeholder="Start typing…"
           />
+          <p class="limit-msg" data-testid="input-datalist-limit-msg">Maximum 234 characters reached.</p>
           <datalist id="countries">
             <option value="Austria"></option>
             <option value="Belgium"></option>

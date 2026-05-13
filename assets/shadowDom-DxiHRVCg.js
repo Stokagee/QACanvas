@@ -1,4 +1,4 @@
-import{i as r}from"./main-DhNBx2QF.js";r({active:"shadow-dom"});const a=`
+import{i as r}from"./main-DFFTVTx1.js";r({active:"shadow-dom"});const a=`
   :host { display: block; padding: 16px; border: 1px solid #e5e7eb; border-radius: 8px; max-width: 420px; font-family: system-ui, sans-serif; }
   input, button { font-family: inherit; font-size: 0.9rem; padding: 6px 10px; border-radius: 6px; border: 1px solid #d1d5db; }
   button { background: #6366f1; color: white; border: none; cursor: pointer; }
